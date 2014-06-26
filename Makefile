@@ -15,7 +15,7 @@
 # directories of LLVM, Clang in tools/clang/, etc.
 # Alternatively, if you're building vs. a binary download of LLVM, then
 # LLVM_SRC_PATH can point to the main untarred directory.
-LLVM_SRC_PATH := $$HOME/llvm/llvm_svn_rw
+LLVM_SRC_PATH := /ubuntu/chyyuu/develop/llvm-git/src
 
 # LLVM_BUILD_PATH is the directory in which you built LLVM - where you ran
 # configure or cmake.
@@ -23,8 +23,9 @@ LLVM_SRC_PATH := $$HOME/llvm/llvm_svn_rw
 # LLVM_BIN_PATH is the directory where binaries are placed by the LLVM build
 # process. It should contain the tools like opt, llc and clang. The default
 # reflects a debug build with autotools (configure & make).
-LLVM_BUILD_PATH := $$HOME/llvm/build/svn-make-debug
-LLVM_BIN_PATH := $(LLVM_BUILD_PATH)/Debug+Asserts/bin
+LLVM_BUILD_PATH := /ubuntu/chyyuu/develop/llvm-git/build
+LLVM_INSTALL_PATH := /ubuntu/chyyuu/develop/llvm-git/install
+LLVM_BIN_PATH := $(LLVM_INSTALL_PATH)/bin
 
 # Run make BUILD_NINJA=1 to enable these paths
 ifdef BUILD_NINJA
