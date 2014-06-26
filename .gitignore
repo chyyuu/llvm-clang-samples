@@ -1,4 +1,7 @@
 build/
 *.pyc
 *.dot
+*~
+*.org
+
 
