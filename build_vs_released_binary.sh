@@ -15,7 +15,7 @@
 set -eu
 set -x
 
-BINARY_DIR_PATH=${BINARY_DIR_PATH:-$HOME/llvm/llvm4.0-binaries}
+BINARY_DIR_PATH=${BINARY_DIR_PATH:-/chydata/thecode/llvm-related/clang+llvm-4.0.0-x86_64-linux-gnu-ubuntu-16.10}
 
 make -j8 \
   CXX=$BINARY_DIR_PATH/bin/clang++ \
