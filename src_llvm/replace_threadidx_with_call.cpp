@@ -16,6 +16,7 @@
 #include "llvm/IR/Constants.h"
 #include "llvm/IR/Instruction.h"
 #include "llvm/IR/Instructions.h"
+#include "llvm/IR/AssemblyAnnotationWriter.h"
 #include "llvm/IR/LegacyPassManager.h"
 #include "llvm/IR/Module.h"
 #include "llvm/IR/Operator.h"
@@ -135,7 +136,14 @@ int main(int argc, char **argv) {
   PM.run(*Mod);
 
   outs() << "Dumping the module after the pass has run:\n";
-  Mod->dump();
 
+  //std::unique_ptr<AssemblyAnnotationWriter> Annotator;
+//  if (ShowAnnotations)
+//    Annotator.reset(new CommentWriter());
+
+  // All that llvm-dis does is write the assembly to a file.
+  //Mod->dump();
+  //Mod->print(errs(),Annotator.get(), false);
+  Mod->print(errs(),nullptr, false,false);
   return 0;
 }

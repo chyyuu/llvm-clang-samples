@@ -33,13 +33,14 @@ int main(int argc, char **argv) {
                                              E = Mod->named_metadata_end();
        I != E; ++I) {
     outs() << "Found MDNode:\n";
-    I->dump();
-
+    //I->dump();
+    I->print(errs());
     for (unsigned i = 0, e = I->getNumOperands(); i != e; ++i) {
       Metadata *Op = I->getOperand(i);
       if (auto *N = dyn_cast<MDNode>(Op)) {
         outs() << "  Has MDNode operand:\n  ";
-        N->dump();
+        //N->dump();
+        N->print(errs());
         outs() << "  " << N->getNumOperands() << " operands\n";
       }
     }

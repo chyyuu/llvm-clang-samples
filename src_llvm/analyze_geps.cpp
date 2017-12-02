@@ -37,7 +37,8 @@ public:
     for (auto II = BB.begin(), II_e = BB.end(); II != II_e; ++II) {
       if (GetElementPtrInst *GEP = dyn_cast<GetElementPtrInst>(II)) {
         outs() << "Found GEP:\n";
-        GEP->dump();
+        //GEP->dump();
+        GEP->print(errs());
         outs() << "  The type is: " << ToString(GEP->getType()) << "\n";
         outs() << "  The pointer operand is: "
                << ToString(GEP->getPointerOperand()) << "\n";
